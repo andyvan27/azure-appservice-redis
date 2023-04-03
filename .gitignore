@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/net4-api/net4-api/bin
+/net4-api/net4-api/obj/Debug
+/net4-api/packages
