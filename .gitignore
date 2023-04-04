@@ -5,3 +5,7 @@
 /net4-api/net4-api/bin
 /net4-api/net4-api/obj/Debug
 /net4-api/packages
+/net4-api/S1_DistCache_1_Instance
+/net4-api/S1_MemCache_1_Instance
+/net4-api/S1_NoCache_1_Instance
+/net4-api/jmeter.log

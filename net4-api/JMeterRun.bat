@@ -1,0 +1,1 @@
+C:\Open\apache-jmeter-5.5\bin\jmeter -n -t S1_DistCache_1_Instance.jmx -l S1_DistCache_1_Instance\S1_DistCache_1_Instance.csv -e -o S1_DistCache_1_Instance

@@ -11,3 +11,11 @@
 PONG
 127.0.0.1:6379>
  ```
+
+## Open net4-api in Visual Studio Community 2022
+Hit F5 to run
+Deploy to your Azure App Service
+
+## Download JMeter
+https://jmeter.apache.org/download_jmeter.cgi
+
