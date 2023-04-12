@@ -6,12 +6,39 @@ using StackExchange.Redis;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Net;
 using System.Runtime.Caching;
 using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace net4_api.Controllers
 {
+    public class RedisCacheFactory
+    {
+        private readonly Lazy<ConnectionMultiplexer> _connectionMultiplexer;
+        private readonly object _locker = new object();
+        private IDistributedCache _redisCache;
+
+        public IDistributedCache GetRedisCache()
+        {
+            if (_redisCache == null)
+            {
+                lock (_locker)
+                {
+                    if (_redisCache == null)
+                    {   
+                        _redisCache = new RedisCache(new RedisCacheOptions
+                        {
+                            Configuration = ConfigurationManager.ConnectionStrings["RedisConnection"].ConnectionString,
+                            InstanceName = "DistRedis:"
+                        });
+                    }
+                }
+            }
+            return _redisCache;
+        }
+    }
+
     public class CarsController : ApiController
     {
         private string CACHE_KEY = "Cars";
@@ -36,27 +63,23 @@ namespace net4_api.Controllers
         }
 
         //Redis as a distributed cache
-        private static IDistributedCache _distCache = null;
-        private static IDistributedCache DistCache
+        private static RedisCacheFactory _distFactory = null;
+        private static RedisCacheFactory DistFactory
         {
             get
             {
-                if(_distCache == null)
+                if(_distFactory == null)
                 {
-                    _distCache = new RedisCache(new RedisCacheOptions
-                    {
-                        Configuration = ConfigurationManager.ConnectionStrings["RedisConnection"].ConnectionString,
-                        InstanceName = "DistRedis:"
-                    });
+                    _distFactory = new RedisCacheFactory();
                 }
-                return _distCache;
+                return _distFactory;
             }
         }
 
         public async Task<IEnumerable<Car>> GetDistCache()
         {
-            IEnumerable<Car> cars;
-            string json = await DistCache.GetStringAsync(CACHE_KEY);
+            IEnumerable<Car> cars;            
+            string json = await DistFactory.GetRedisCache().GetStringAsync(CACHE_KEY);
             if (!string.IsNullOrEmpty(json))
             {
                 cars = JsonConvert.DeserializeObject<IEnumerable<Car>>(json);
@@ -64,7 +87,7 @@ namespace net4_api.Controllers
             else
             {
                 cars = await GetCars();
-                DistCache.SetString(CACHE_KEY, JsonConvert.SerializeObject(cars), new DistributedCacheEntryOptions() { AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(CACHING_MINUTES) });
+                await DistFactory.GetRedisCache().SetStringAsync(CACHE_KEY, JsonConvert.SerializeObject(cars), new DistributedCacheEntryOptions() { AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(CACHING_MINUTES) });
             }
             return cars;
         }
@@ -109,7 +132,7 @@ namespace net4_api.Controllers
                 new Car{ Make = "Mazda", Model = "BT50" },
                 new Car{ Make = "Mitsubishi", Model = "Pajero" },
                 new Car{ Make = "Mercedes", Model = "G63" },
-                new Car{ Make = "Mercedes", Model = "X7" }
+                new Car{ Make = "BMW", Model = "X7" }
             };
         }
     }

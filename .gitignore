@@ -9,3 +9,20 @@
 /net4-api/S1_MemCache_1_Instance
 /net4-api/S1_NoCache_1_Instance
 /net4-api/jmeter.log
+/net4-api/P1V2_C4_DistCache_1_Instance
+/net4-api/P2V2_C4_DistCache_1_Instance
+/net4-api/S1_C4_DistCache_1_Instance
+/net4-api/S1_C6_DistCache_1_Instance
+/net4-api/S1_C6_MemCache_1_Instance
+/net4-api/S1_C6_New_DistCache_1_Instance
+/net4-api/S1_C6_RedisCache_1_Instance
+/net4-api/S3_C4_DistCache_1_Instance
+/net4-api/net4-api/Properties/PublishProfiles/ANCars - Web Deploy.pubxml.user
+/net4-api/S1_C6_10_RedisCache
+/net4-api/S1_C6_10_DistCache
+/net4-api/S1_C1_1_RedisCache
+/net4-api/S1_C1_1_MemCache
+/net4-api/S1_C1_1_DistCache
+/net4-api/S1_C1_10_RedisCache
+/net4-api/S1_C1_10_MemCache
+/net4-api/S1_C1_10_DistCache
