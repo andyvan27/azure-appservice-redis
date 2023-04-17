@@ -1,3 +1,27 @@
+PS C:\Git\azure-appservice-redis\net4-api> .\Run_1_MemCache.bat 
+
+C:\Git\azure-appservice-redis\net4-api>rd /s/q S1_C1_1_MemCache_1Min
+The system cannot find the file specified.
+summary +  11202 in 00:00:30 =  373.7/s Avg:  2701 Min:  1524 Max: 81550 Err:     0 (0.00%) Active: 1000 Started: 1000 Finished: 0
+summary =  17135 in 00:01:49 =  156.6/s Avg:  6277 Min:    20 Max: 81550 Err:     0 (0.00%)
+summary +  12437 in 00:01:30 =  138.2/s Avg:  3206 Min:    15 Max: 73487 Err:     0 (0.00%) Active: 1000 Started: 1000 Finished: 0
+summary =  29572 in 00:03:19 =  148.3/s Avg:  4985 Min:    15 Max: 81550 Err:     0 (0.00%)
+summary +  12381 in 00:00:30 =  412.7/s Avg:  4829 Min:   350 Max: 100271 Err:     0 (0.00%) Active: 999 Started: 1000 Finished: 1
+summary =  41953 in 00:03:49 =  182.9/s Avg:  4939 Min:    15 Max: 100271 Err:     0 (0.00%)
+summary +  12596 in 00:01:30 =  140.0/s Avg:  7778 Min:   276 Max: 109489 Err:     0 (0.00%) Active: 984 Started: 1000 Finished: 16
+summary =  54549 in 00:05:19 =  170.8/s Avg:  5595 Min:    15 Max: 109489 Err:     0 (0.00%)
+summary +  12490 in 00:00:30 =  416.1/s Avg:  3203 Min:   928 Max: 83674 Err:     0 (0.00%) Active: 901 Started: 1000 Finished: 99
+summary =  67039 in 00:05:49 =  191.9/s Avg:  5149 Min:    15 Max: 109489 Err:     0 (0.00%)
+summary +  12497 in 00:01:30 =  138.9/s Avg:  3288 Min:    14 Max: 72860 Err:     0 (0.00%) Active: 766 Started: 1000 Finished: 234
+summary =  79536 in 00:07:19 =  181.0/s Avg:  4857 Min:    14 Max: 109489 Err:     0 (0.00%)
+summary +  12095 in 00:00:30 =  403.1/s Avg:  4442 Min:    76 Max: 101021 Err:     0 (0.00%) Active: 432 Started: 1000 Finished: 568
+summary =  91631 in 00:07:49 =  195.2/s Avg:  4802 Min:    14 Max: 109489 Err:     0 (0.00%)
+summary +   8369 in 00:01:23 =  101.0/s Avg:  2130 Min:    16 Max: 61113 Err:     0 (0.00%) Active: 0 Started: 1000 Finished: 1000
+summary = 100000 in 00:09:12 =  181.1/s Avg:  4578 Min:    14 Max: 109489 Err:     0 (0.00%)
+Tidying up ...    @ 2023 Apr 17 19:06:52 AEST (1681722412885)
+... end of run
+
+----------------------------------------------------------------
 PS C:\Git\azure-appservice-redis\net4-api> .\Run_10_MemCache.bat
 
 C:\Git\azure-appservice-redis\net4-api>rd /s/q S1_C1_10_MemCache_1Min
@@ -154,6 +178,46 @@ Tidying up ...    @ 2023 Apr 17 17:38:07 AEST (1681717087331)
 ... end of run
 
 -----------------------------------------------------------------
+                                           .\Run_1_DistCache.bat
+
+C:\Git\azure-appservice-redis\net4-api>rd /s/q S1_C1_1_DistCache_1Min
+The system cannot find the file specified.
+
+C:\Git\azure-appservice-redis\net4-api>C:\Open\apache-jmeter-5.5\bin\jmeter -n -t J_DistCache.jmx -l S1_C1_1_DistCache_1Min\S1_C1_1_DistCache_1Min.csv -e -o S1_C1_1_DistCache_1Min
+Creating summariser <summary>
+Created the tree successfully using J_DistCache.jmx
+Starting standalone test @ 2023 Apr 17 20:04:51 AEST (1681725891045)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+Warning: Nashorn engine is planned to be removed from a future JDK release
+summary +      1 in 00:01:10 =    0.0/s Avg: 69791 Min: 69791 Max: 69791 Err:     0 (0.00%) Active: 1000 Started: 1000 Finished: 0
+summary +   9467 in 00:00:29 =  327.9/s Avg: 10243 Min:    19 Max: 98302 Err:     0 (0.00%) Active: 1000 Started: 1000 Finished: 0
+summary =   9468 in 00:01:39 =   95.7/s Avg: 10250 Min:    19 Max: 98302 Err:     0 (0.00%)
+summary +   9130 in 00:00:30 =  301.9/s Avg:  3057 Min:  1652 Max:  7147 Err:     0 (0.00%) Active: 1000 Started: 1000 Finished: 0
+summary =  18598 in 00:02:09 =  144.0/s Avg:  6719 Min:    19 Max: 98302 Err:     0 (0.00%)
+summary +  10321 in 00:01:30 =  115.2/s Avg:  5574 Min:   683 Max: 62951 Err:     0 (0.00%) Active: 1000 Started: 1000 Finished: 0
+summary =  28919 in 00:03:39 =  132.2/s Avg:  6310 Min:    19 Max: 98302 Err:     0 (0.00%)
+summary +  10482 in 00:00:30 =  350.8/s Avg:  5538 Min:   155 Max: 89852 Err:     0 (0.00%) Active: 1000 Started: 1000 Finished: 0
+summary =  39401 in 00:04:09 =  158.4/s Avg:  6105 Min:    19 Max: 98302 Err:     0 (0.00%)
+summary +   9355 in 00:00:30 =  311.8/s Avg:  3858 Min:  1423 Max: 95257 Err:     0 (0.00%) Active: 1000 Started: 1000 Finished: 0
+summary =  48756 in 00:04:39 =  175.0/s Avg:  5674 Min:    19 Max: 98302 Err:     0 (0.00%)
+summary +   9805 in 00:00:30 =  324.6/s Avg:  3088 Min:  1528 Max:  6921 Err:     0 (0.00%) Active: 1000 Started: 1000 Finished: 0
+summary =  58561 in 00:05:09 =  189.6/s Avg:  5241 Min:    19 Max: 98302 Err:     0 (0.00%)
+summary +   1644 in 00:01:04 =   25.9/s Avg:  2425 Min:  2045 Max: 62181 Err:     0 (0.00%) Active: 1000 Started: 1000 Finished: 0
+summary =  60205 in 00:06:12 =  161.6/s Avg:  5164 Min:    19 Max: 98302 Err:     0 (0.00%)
+summary +   8036 in 00:00:26 =  306.1/s Avg:  6139 Min:   138 Max: 85976 Err:     0 (0.00%) Active: 995 Started: 1000 Finished: 5
+summary =  68241 in 00:06:39 =  171.2/s Avg:  5279 Min:    19 Max: 98302 Err:     0 (0.00%)
+summary +  10748 in 00:00:30 =  356.4/s Avg:  5970 Min:  1042 Max: 109997 Err:     0 (0.00%) Active: 880 Started: 1000 Finished: 120
+summary =  78989 in 00:07:09 =  184.2/s Avg:  5373 Min:    19 Max: 109997 Err:     0 (0.00%)
+summary +   9542 in 00:00:30 =  315.2/s Avg:  2659 Min:   895 Max:  6346 Err:     0 (0.00%) Active: 690 Started: 1000 Finished: 310
+summary =  88531 in 00:07:39 =  192.8/s Avg:  5080 Min:    19 Max: 109997 Err:     0 (0.00%)
+summary +  10842 in 00:01:30 =  121.1/s Avg:  3137 Min:    27 Max: 66014 Err:     0 (0.00%) Active: 92 Started: 1000 Finished: 908
+summary =  99373 in 00:09:09 =  181.1/s Avg:  4868 Min:    19 Max: 109997 Err:     0 (0.00%)
+summary +    627 in 00:00:02 =  379.5/s Avg:   154 Min:    17 Max:   354 Err:     0 (0.00%) Active: 0 Started: 1000 Finished: 1000
+summary = 100000 in 00:09:10 =  181.7/s Avg:  4839 Min:    17 Max: 109997 Err:     0 (0.00%)
+Tidying up ...    @ 2023 Apr 17 20:14:01 AEST (1681726441657)
+... end of run
+
+-----------------------------------------------------------------
 PS C:\Git\azure-appservice-redis\net4-api> .\Run_10_DistCache.bat 
 
 C:\Git\azure-appservice-redis\net4-api>rd /s/q S1_C1_10_DistCache_1Min
@@ -176,6 +240,42 @@ summary =  99955 in 00:03:43 =  448.0/s Avg:  1066 Min:    15 Max: 93364 Err:   
 summary +     45 in 00:00:02 =   27.9/s Avg:    35 Min:    17 Max:   633 Err:     0 (0.00%) Active: 0 Started: 1000 Finished: 1000
 summary = 100000 in 00:03:45 =  445.0/s Avg:  1065 Min:    15 Max: 93364 Err:     7 (0.01%)
 Tidying up ...    @ 2023 Apr 17 15:52:31 AEST (1681710751625)
+... end of run
+
+------------------------------------------------------------------
+PS C:\Git\azure-appservice-redis\net4-api> .\Run_1_RedisCache.bat
+
+C:\Git\azure-appservice-redis\net4-api>rd /s/q S1_C1_1_RedisCache_1Min
+The system cannot find the file specified.
+
+C:\Git\azure-appservice-redis\net4-api>C:\Open\apache-jmeter-5.5\bin\jmeter -n -t J_RedisCache.jmx -l S1_C1_1_RedisCache_1Min\S1_C1_1_RedisCache_1Min.csv -e -o S1_C1_1_RedisCache_1Min
+Creating summariser <summary>
+Created the tree successfully using J_RedisCache.jmx
+Starting standalone test @ 2023 Apr 17 20:19:49 AEST (1681726789087)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+Warning: Nashorn engine is planned to be removed from a future JDK release
+summary +      1 in 00:01:13 =    0.0/s Avg: 72288 Min: 72288 Max: 72288 Err:     0 (0.00%) Active: 1000 Started: 1000 Finished: 0
+summary +   8554 in 00:00:28 =  306.7/s Avg: 10257 Min:    16 Max: 99613 Err:     0 (0.00%) Active: 1000 Started: 1000 Finished: 0
+summary =   8555 in 00:01:41 =   84.6/s Avg: 10264 Min:    16 Max: 99613 Err:     0 (0.00%)
+summary +   9177 in 00:00:30 =  307.1/s Avg:  4365 Min:  1441 Max: 109758 Err:     0 (0.00%) Active: 1000 Started: 1000 Finished: 0
+summary =  17732 in 00:02:11 =  135.4/s Avg:  7211 Min:    16 Max: 109758 Err:     0 (0.00%)
+summary +  10174 in 00:00:30 =  343.2/s Avg:  2861 Min:  1608 Max:  8612 Err:     0 (0.00%) Active: 1000 Started: 1000 Finished: 0
+summary =  27906 in 00:02:41 =  173.8/s Avg:  5625 Min:    16 Max: 109758 Err:     0 (0.00%)
+summary +  10693 in 00:01:30 =  118.8/s Avg:  5521 Min:    54 Max: 81071 Err:     0 (0.00%) Active: 1000 Started: 1000 Finished: 0
+summary =  38599 in 00:04:11 =  154.0/s Avg:  5596 Min:    16 Max: 109758 Err:     0 (0.00%)
+summary +  10313 in 00:00:31 =  332.7/s Avg:  6108 Min:  1135 Max: 110143 Err:     0 (0.00%) Active: 1000 Started: 1000 Finished: 0
+summary =  48912 in 00:04:42 =  173.7/s Avg:  5704 Min:    16 Max: 110143 Err:     0 (0.00%)
+summary +   9925 in 00:00:29 =  342.3/s Avg:  2757 Min:  1416 Max:  8188 Err:     0 (0.00%) Active: 999 Started: 1000 Finished: 1
+summary =  58837 in 00:05:11 =  189.4/s Avg:  5207 Min:    16 Max: 110143 Err:     0 (0.00%)
+summary +  11863 in 00:01:30 =  131.7/s Avg:  4018 Min:   180 Max: 67862 Err:     0 (0.00%) Active: 990 Started: 1000 Finished: 10
+summary =  70700 in 00:06:41 =  176.5/s Avg:  5007 Min:    16 Max: 110143 Err:     0 (0.00%)
+summary +  10155 in 00:00:31 =  331.5/s Avg:  2356 Min:   127 Max: 91437 Err:     0 (0.00%) Active: 656 Started: 1000 Finished: 344
+summary =  80855 in 00:07:11 =  187.5/s Avg:  4674 Min:    16 Max: 110143 Err:     0 (0.00%)
+summary +  10201 in 00:00:29 =  348.1/s Avg:  6185 Min:    84 Max: 116783 Err:     0 (0.00%) Active: 470 Started: 1000 Finished: 530
+summary =  91056 in 00:07:41 =  197.7/s Avg:  4844 Min:    16 Max: 116783 Err:     0 (0.00%)
+summary +   8944 in 00:00:24 =  369.5/s Avg:   863 Min:    16 Max:  6058 Err:     0 (0.00%) Active: 0 Started: 1000 Finished: 1000
+summary = 100000 in 00:08:05 =  206.3/s Avg:  4488 Min:    16 Max: 116783 Err:     0 (0.00%)
+Tidying up ...    @ 2023 Apr 17 20:27:54 AEST (1681727274209)
 ... end of run
 
 ------------------------------------------------------------------
