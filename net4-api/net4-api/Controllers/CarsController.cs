@@ -6,7 +6,6 @@ using StackExchange.Redis;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Net;
 using System.Runtime.Caching;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -124,7 +123,8 @@ namespace net4_api.Controllers
 
         private async Task<IEnumerable<Car>> GetCars()
         {
-            await Task.Delay(10000); //10 seconds load
+            //await Task.Delay(1000 * 10); //10 seconds
+            await Task.Delay(1000 * 60); //1 min
             return new List<Car>()
             {
                 new Car{ Make = "Toyota", Model = "Landcruiser" },

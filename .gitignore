@@ -26,3 +26,8 @@
 /net4-api/S1_C1_10_RedisCache
 /net4-api/S1_C1_10_MemCache
 /net4-api/S1_C1_10_DistCache
+/net4-api/S1_C1_10_DistCache_1Min
+/net4-api/S1_C1_10_DistCache_AUE
+/net4-api/S1_C1_10_MemCache_1Min
+/net4-api/S1_C1_10_RedisCache_1Min
+/net4-api/S1_C1_10_RedisCache_AUE
