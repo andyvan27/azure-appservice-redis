@@ -1,2 +1,2 @@
-rd /s/q S1_C1_10_MemCache
-C:\Open\apache-jmeter-5.5\bin\jmeter -n -t J_MemCache.jmx -l S1_C1_10_MemCache\S1_C1_10_MemCache.csv -e -o S1_C1_10_MemCache
+rd /s/q S1_C1_10_MemCache_1Min
+C:\Open\apache-jmeter-5.5\bin\jmeter -n -t J_MemCache.jmx -l S1_C1_10_MemCache_1Min\S1_C1_10_MemCache_1Min.csv -e -o S1_C1_10_MemCache_1Min
